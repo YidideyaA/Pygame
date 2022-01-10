@@ -17,9 +17,11 @@ BORDER = pygame.Rect(WIDTH//2 - 5, 0, 10, HEIGHT)
 
 HEALTH_FONT = pygame.font.SysFont('Arabic', 40)
 WINNER_FONT = pygame.font.SysFont('Arabic', 100)
+LOSING_FONT = pygame.font.SysFont('Arabic', 100)
+
 FPS = 60
-VEL = 5
-BULLET_VEL = 7
+VEL = 1
+BULLET_VEL = 10
 MAX_BULLETS =400
 SPACESHIP_WIDTH, SPACESHIP_HEIGHT = 55, 40
 
@@ -106,6 +108,13 @@ def draw_winner(text):
     pygame.display.update()
     pygame.time.delay(5000)
 
+def draw_losing(text):
+    draw_text = LOSING_FONT.render(text, 1, WHITE)
+    WIN.blit(draw_text, (WIDTH/2 - draw_text.get_width()/
+                         2, HEIGHT/2 - draw_text.get_height()/2))
+
+    pygame.display.update()
+    pygame.time.delay(500)
 
 
 def main():
@@ -150,6 +159,13 @@ def main():
                     yellow_health -= 1
 
         winner_text = ""
+        losing_text = ""
+        if red_health < 6:
+            losing_text = "red is about to lose!"
+
+        if yellow_health < 6:
+            losing_text = "yellow is about to lose!"
+
         if red_health <= 0:
             winner_text = "Yellow Wins!"
         if yellow_health <= 0:
@@ -157,6 +173,10 @@ def main():
 
         if winner_text != "":
             draw_winner(winner_text)
+            break
+
+        if losing_text != "":
+            draw_losing(losing_text)
             break
 
 

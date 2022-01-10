@@ -42,7 +42,7 @@
     </option>
   </component>
   <component name="RunManager">
-    <configuration name="game" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="game" type="PythonConfigurationType" factoryName="Python">
       <module name="Pygame" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -63,11 +63,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Python.game" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -87,7 +82,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
