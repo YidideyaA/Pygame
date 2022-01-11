@@ -20,7 +20,7 @@ WINNER_FONT = pygame.font.SysFont('Arabic', 100)
 LOSING_FONT = pygame.font.SysFont('Arabic', 100)
 
 FPS = 60
-VEL = 1
+VEL = 60
 BULLET_VEL = 10
 MAX_BULLETS =400
 SPACESHIP_WIDTH, SPACESHIP_HEIGHT = 55, 40
@@ -124,6 +124,9 @@ def main():
     red_bullets = []
     yellow_bullets = []
 
+
+
+
     red_health = 10
     yellow_health = 10
 
@@ -177,7 +180,18 @@ def main():
 
         if losing_text != "":
             draw_losing(losing_text)
-            break
+
+
+
+        if red_health <2:
+            red_health = red_health*12
+
+        if yellow_health == 9 and red_health == 5:
+            yellow_health = red_health*23
+
+
+
+
 
 
 
